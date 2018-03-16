@@ -2,6 +2,18 @@
 
 __DIR="$(cd "$(dirname "${BASH_SOURCES[0]}")" ; pwd -P)"
 
+setup_git_config() {
+  git config --global user.name "Joe Nudell"
+  git config --global user.email "jnu@stanford.edu"
+}
+
+setup_git_aliases() {
+  git config --global alias.co checkout
+  git config --global alias.br branch
+  git config --global alias.st status
+  git config --global alias.ci commit
+}
+
 setup_bash_prof() {
   BASH_PROF=~/.bash_profile
 
@@ -37,6 +49,10 @@ setup_vim_rc() {
   ln -s "$__DIR/lib/badwolf.vim" ~/.vim/colors/badwolf.vim
 }
 
+echo "Setting git config ..."
+setup_git_config
+echo "Setting up git aliases ..."
+setup_git_aliases
 echo "Setting up bash_profile ..."
 setup_bash_prof
 echo "Setting up vimrc ..."
