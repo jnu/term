@@ -6,6 +6,7 @@ source "$__BP_INCLUDE_DIR/.git-completion"
 source "$__BP_INCLUDE_DIR/.git-prompt"
 
 export EDITOR="vim"
+export VISUAL="vim"
 
 export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWDIRTYSTATE=1
