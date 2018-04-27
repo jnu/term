@@ -1,9 +1,10 @@
+set relativenumber
+set number
 set tabstop=4
 set softtabstop=4
 set expandtab
 syntax enable
 colorscheme badwolf
-set number
 set showcmd
 set showmatch
 set incsearch
