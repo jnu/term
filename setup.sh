@@ -15,19 +15,35 @@ setup_git_aliases() {
 }
 
 setup_bash_prof() {
+  BASH_PROF_EXT=~/.term.bash_profile
   BASH_PROF=~/.bash_profile
 
-  if [ -f $BASH_PROF ] || [ -L $BASH_PROF ]; then
-    echo "Bash profile exists. Overwrite?"
+  if [ ! -f $BASH_PROF ] && [ ! -L $BASH_PROF ]; then
+    echo "Bash profile does not exist. Creating ..."
+    touch $BASH_PROF
+  fi
+
+  if [ -f $BASH_PROF_EXT ] || [ -L $BASH_PROF_EXT ]; then
+    echo "Bash settings exists. Overwrite?"
     select yn in "Yes" "No"; do
       case $yn in 
-        Yes ) rm $BASH_PROF; break;;
+        Yes ) rm $BASH_PROF_EXT; break;;
         No ) return;;
       esac
     done
   fi
 
-  ln -s "$__DIR/lib/.bash_profile" $BASH_PROF
+  ln -s "$__DIR/lib/.bash_profile" $BASH_PROF_EXT
+
+  BP_INC=$(grep -c "$BASH_PROF_EXT" $BASH_PROF)
+  if [ $BP_INC -lt 1 ]; then
+    echo "Bash config not auto-loaded yet. Fixing ..."
+    echo "# Custom bash settings from github.com/jnu/term" >> $BASH_PROF
+    echo "source $BASH_PROF_EXT" >> $BASH_PROF
+  else
+    echo "Bash settings already sourced."
+  fi
+
   source $BASH_PROF
 }
 
