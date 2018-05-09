@@ -1,3 +1,6 @@
+" Set up pathogen
+execute pathogen#infect()
+
 set relativenumber
 set number
 set tabstop=4
@@ -9,3 +12,10 @@ set showcmd
 set showmatch
 set incsearch
 set hlsearch
+filetype plugin indent on
+
+" Quick leave insert.
+inoremap jj <ESC>
+
+" Makefiles need tabs
+autocmd FileType make set noexpandtab

@@ -63,6 +63,14 @@ setup_vim_rc() {
   ln -s "$__DIR/lib/.vimrc" $VIMRC
   mkdir -p ~/.vim/colors
   ln -s "$__DIR/lib/badwolf.vim" ~/.vim/colors/badwolf.vim
+  mkdir -p ~/.vim/autoload
+  mkdir -p ~/.vim/bundle
+  ln -s "$__DIR/linked/vim-pathogen/autoload/pathogen.vim" ~/.vim/autoload/pathogen.vim
+}
+
+setup_vim_pathogen_plugins() {
+  ln -s "$__DIR/linked/typescript-vim" ~/.vim/bundle/typescript-vim
+  ln -s "$__DIR/linked/tsuquyomi" ~/.vim/bundle/tsuquyomi
 }
 
 echo "Setting git config ..."
@@ -73,5 +81,7 @@ echo "Setting up bash_profile ..."
 setup_bash_prof
 echo "Setting up vimrc ..."
 setup_vim_rc
+echo "Adding plugins ..."
+setup_vim_pathogen_plugins
 
 echo "Done!"
