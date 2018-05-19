@@ -73,6 +73,20 @@ setup_vim_pathogen_plugins() {
   ln -s "$__DIR/linked/tsuquyomi" ~/.vim/bundle/tsuquyomi
 }
 
+setup_ptp_config() {
+  mkdir -p ~/.ptpython
+  if [ -f ~/.ptpython/config.py ]; then
+    echo "Ptpython config exists. Overwrite?"
+    select yn in "Yes" "No"; do
+      case $yn in
+        Yes ) rm ~/.ptpython/config.py; break;;
+        No ) return ;;
+      esac
+    done
+  fi
+  ln -s "$__DIR/lib/ptpython.config.py" ~/.ptpython/config.py
+}
+
 echo "Setting git config ..."
 setup_git_config
 echo "Setting up git aliases ..."
@@ -83,5 +97,7 @@ echo "Setting up vimrc ..."
 setup_vim_rc
 echo "Adding plugins ..."
 setup_vim_pathogen_plugins
+echo "Setting up ptpython config ..."
+setup_ptp_config
 
 echo "Done!"
