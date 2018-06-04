@@ -71,6 +71,7 @@ setup_vim_rc() {
 setup_vim_pathogen_plugins() {
   ln -s "$__DIR/linked/typescript-vim" ~/.vim/bundle/typescript-vim
   ln -s "$__DIR/linked/tsuquyomi" ~/.vim/bundle/tsuquyomi
+  ln -s "$__DIR/linked/csv.vim" ~/.vim/bundle/csv.vim
 }
 
 setup_ptp_config() {

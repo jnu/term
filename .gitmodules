@@ -7,3 +7,6 @@
 [submodule "linked/tsuquyomi"]
 	path = linked/tsuquyomi
 	url = https://github.com/Quramy/tsuquyomi
+[submodule "linked/csv.vim"]
+	path = linked/csv.vim
+	url = https://github.com/chrisbra/csv.vim
