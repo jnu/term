@@ -69,6 +69,7 @@ setup_vim_rc() {
 }
 
 init_submodules() {
+  git submodule init
   find linked/ -maxdepth 1 -mindepth 1 -type d -exec git submodule update {} \;
 }
 
