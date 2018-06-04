@@ -10,3 +10,7 @@
     path = linked/csv.vim
     url = https://github.com/chrisbra/csv.vim
     ignore = dirty
+[submodule "linked/typescript-vim"]
+    path = linked/typescript-vim
+    url = https://github.com/leafgarland/typescript-vim
+    ignore = dirty

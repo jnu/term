@@ -68,10 +68,25 @@ setup_vim_rc() {
   ln -s "$__DIR/linked/vim-pathogen/autoload/pathogen.vim" ~/.vim/autoload/pathogen.vim
 }
 
+init_submodules() {
+  find linked/ -maxdepth 1 -mindepth 1 -type d -exec git submodule update {} \;
+}
+
+link_pathogen_plugin() {
+  SRC="$__DIR/linked/$1"
+  DEST="$HOME/.vim/bundle/$1"
+  echo "Linking $SRC to $DEST ..."
+  if [ ! -L "$DEST" ]; then
+    ln -s "$SRC" "$DEST"
+  else
+    echo " ... already exists"
+  fi
+}
+
 setup_vim_pathogen_plugins() {
-  ln -s "$__DIR/linked/typescript-vim" ~/.vim/bundle/typescript-vim
-  ln -s "$__DIR/linked/tsuquyomi" ~/.vim/bundle/tsuquyomi
-  ln -s "$__DIR/linked/csv.vim" ~/.vim/bundle/csv.vim
+  link_pathogen_plugin "typescript-vim"
+  link_pathogen_plugin "tsuquyomi"
+  link_pathogen_plugin "csv.vim"
 }
 
 setup_ptp_config() {
@@ -97,6 +112,7 @@ setup_bash_prof
 echo "Setting up vimrc ..."
 setup_vim_rc
 echo "Adding plugins ..."
+init_submodules
 setup_vim_pathogen_plugins
 echo "Setting up ptpython config ..."
 setup_ptp_config
