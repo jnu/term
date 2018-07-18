@@ -21,3 +21,14 @@ inoremap jj <ESC>
 autocmd FileType make set noexpandtab
 " R files use two spaces
 autocmd FileType r set tabstop=2 softtabstop=2
+
+" Show lines over length
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+"Open stuff in the right spot
+set splitbelow
+set splitright
