@@ -19,3 +19,5 @@ inoremap jj <ESC>
 
 " Makefiles need tabs
 autocmd FileType make set noexpandtab
+" R files use two spaces
+autocmd FileType r set tabstop=2 softtabstop=2
