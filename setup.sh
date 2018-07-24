@@ -14,6 +14,10 @@ setup_git_aliases() {
   git config --global alias.ci commit
 }
 
+setup_flake8() {
+    python3 -m pip install --user flake8
+}
+
 setup_bash_prof() {
   BASH_PROF_EXT=~/.term.bash_profile
   BASH_PROF=~/.bash_profile
@@ -119,5 +123,7 @@ init_submodules
 setup_vim_pathogen_plugins
 echo "Setting up ptpython config ..."
 setup_ptp_config
+echo "Setting up flake8"
+setup_flake8
 
 echo "Done!"
