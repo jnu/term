@@ -17,3 +17,6 @@
 [submodule "linked/vim-es6"]
 	path = linked/vim-es6
 	url = https://github.com/isRuslan/vim-es6
+[submodule "linked/vim-flake8"]
+	path = linked/vim-flake8
+	url = https://github.com/nvie/vim-flake8
