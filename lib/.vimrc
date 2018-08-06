@@ -5,6 +5,7 @@ set relativenumber
 set number
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 syntax enable
 colorscheme badwolf
@@ -20,7 +21,7 @@ inoremap jj <ESC>
 " Makefiles need tabs
 autocmd FileType make set noexpandtab
 " R files use two spaces
-autocmd FileType r set tabstop=2 softtabstop=2
+autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
 
 " Show lines over length
 if exists('+colorcolumn')
@@ -32,3 +33,6 @@ endif
 "Open stuff in the right spot
 set splitbelow
 set splitright
+
+"Fix backspacing
+set backspace=indent,eol,start
