@@ -23,7 +23,7 @@ autocmd FileType make set noexpandtab
 " R files use two spaces
 autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
 " No tab expansion for tsvs
-autocmd FileType tsv set noexpandtab
+autocmd BufEnter *.tsv set noexpandtab
 
 " Show lines over length
 if exists('+colorcolumn')
