@@ -110,6 +110,23 @@ setup_ptp_config() {
   ln -s "$__DIR/lib/ptpython.config.py" ~/.ptpython/config.py
 }
 
+setup_tmux_config() {
+  TMUX_CONF=~/.tmux.conf
+  
+  if [ -f $TMUX_CONF ] || [ -L $TMUX_CONF ]; then
+    echo "tmux conf exists. Overwrite?"
+    select yn in "Yes" "No"; do
+      case $yn in
+        Yes ) rm $TMUXRC; break;;
+        No ) return;;
+      esac
+    done
+  fi
+
+  ln -s "$__DIR/lib/.tmux.conf" $TMUX_CONF
+}
+  
+
 echo "Setting git config ..."
 setup_git_config
 echo "Setting up git aliases ..."
@@ -118,6 +135,8 @@ echo "Setting up bash_profile ..."
 setup_bash_prof
 echo "Setting up vimrc ..."
 setup_vim_rc
+echo "Setting up tmux ..."
+setup_tmux_config
 echo "Adding plugins ..."
 init_submodules
 setup_vim_pathogen_plugins
