@@ -30,3 +30,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+
+# Launch tmux shell if tmux is available
+command -v tmux >/dev/null 2>&1 && tmux
