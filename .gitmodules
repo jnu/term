@@ -20,3 +20,6 @@
 [submodule "linked/vim-flake8"]
 	path = linked/vim-flake8
 	url = https://github.com/nvie/vim-flake8
+[submodule "linked/vim-go"]
+	path = linked/vim-go
+	url = https://github.com/fatih/vim-go

@@ -94,6 +94,7 @@ setup_vim_pathogen_plugins() {
   link_pathogen_plugin "csv.vim"
   link_pathogen_plugin "vim-es6"
   link_pathogen_plugin "vim-flake8"
+  link_pathogen_plugin "vim-go"
 }
 
 setup_ptp_config() {

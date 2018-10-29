@@ -31,5 +31,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
-# Launch tmux shell if tmux is available
-command -v tmux >/dev/null 2>&1 && tmux
+# command -v tmux >/dev/null 2>&1 && start_tmux
