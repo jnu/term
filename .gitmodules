@@ -23,6 +23,6 @@
 [submodule "linked/vim-go"]
 	path = linked/vim-go
 	url = https://github.com/fatih/vim-go
-[submodule "linked/vim-tslint"]
-	path = linked/vim-tslint
-	url = https://github.com/heavenshell/vim-tslint
+[submodule "linked/syntastic"]
+	path = linked/syntastic
+	url = https://github.com/vim-syntastic/syntastic
