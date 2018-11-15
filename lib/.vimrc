@@ -38,3 +38,6 @@ set splitright
 
 "Fix backspacing
 set backspace=indent,eol,start
+
+"Syntastic checkers
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
