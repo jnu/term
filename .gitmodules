@@ -26,3 +26,6 @@
 [submodule "linked/syntastic"]
 	path = linked/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "linked/vim-antlr"]
+	path = linked/vim-antlr
+	url = https://github.com/jrozner/vim-antlr.git

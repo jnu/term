@@ -96,6 +96,7 @@ setup_vim_pathogen_plugins() {
   link_pathogen_plugin "vim-flake8"
   link_pathogen_plugin "vim-go"
   link_pathogen_plugin "syntastic"
+  link_pathogen_plugin "vim-antlr"
 }
 
 setup_ptp_config() {
