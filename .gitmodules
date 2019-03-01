@@ -29,3 +29,6 @@
 [submodule "linked/vim-antlr"]
 	path = linked/vim-antlr
 	url = https://github.com/jrozner/vim-antlr.git
+[submodule "linked/vim-less"]
+	path = linked/vim-less
+	url = https://github.com/genoma/vim-less
