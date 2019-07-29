@@ -20,10 +20,12 @@ inoremap jj <ESC>
 
 " Makefiles need tabs
 autocmd FileType make set noexpandtab
-" R files use two spaces
-autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
 " No tab expansion for tsvs
 autocmd BufEnter *.tsv set noexpandtab
+" Two space indents for R, TS, JS
+autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType javascript set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType typescript set tabstop=2 softtabstop=2 shiftwidth=2
 
 " Show lines over length
 if exists('+colorcolumn')

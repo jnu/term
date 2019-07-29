@@ -44,3 +44,8 @@ fi
 export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 
 # command -v tmux >/dev/null 2>&1 && start_tmux
+
+# Name the session
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
