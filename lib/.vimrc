@@ -22,11 +22,12 @@ inoremap jj <ESC>
 autocmd FileType make set noexpandtab
 " No tab expansion for tsvs
 autocmd BufEnter *.tsv set noexpandtab
-" Two space indents for R, TS, JS, JSON
+" Two space indents for certain types of files
 autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType typescript set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType json set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2
 
 " Show lines over length
 if exists('+colorcolumn')

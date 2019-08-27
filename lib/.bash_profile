@@ -5,6 +5,8 @@ __BP_INCLUDE_DIR="$( cd "$( dirname "$( readlink "${BASH_SOURCE[0]}" )" )" ; pwd
 source "$__BP_INCLUDE_DIR/.git-completion"
 source "$__BP_INCLUDE_DIR/.git-prompt"
 
+export PYTHONSTARTUP="$__BP_INCLUDE_DIR/.pystartup"
+
 export EDITOR="vim"
 export VISUAL="vim"
 
