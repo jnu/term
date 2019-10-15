@@ -51,3 +51,6 @@ export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 function title {
     echo -ne "\033]0;"$*"\007"
 }
+
+# Shortcut for restarting flaky OSX audio driver
+alias audiup='ps aux | grep coreaudiod | awk '"'"'{print$2}'"'"' | xargs sudo kill -9'

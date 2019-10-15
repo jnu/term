@@ -1,0 +1,7 @@
+try:
+    import readline
+except ImportError:
+    try:
+        import gnureadline
+    except ImportError:
+        print("Can't import either readline or gnureadline")
