@@ -98,6 +98,7 @@ setup_vim_pathogen_plugins() {
   link_pathogen_plugin "syntastic"
   link_pathogen_plugin "vim-antlr"
   link_pathogen_plugin "vim-less"
+  link_pathogen_plugin "vim-graphql"
 }
 
 setup_ptp_config() {

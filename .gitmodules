@@ -32,3 +32,6 @@
 [submodule "linked/vim-less"]
 	path = linked/vim-less
 	url = https://github.com/genoma/vim-less
+[submodule "linked/vim-graphql"]
+	path = linked/vim-graphql
+	url = https://github.com/jparise/vim-graphql
