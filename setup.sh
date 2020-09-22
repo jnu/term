@@ -1,6 +1,7 @@
-#!/bin/bash
+__DIR=
 
-__DIR="$(cd "$(dirname "${BASH_SOURCES[0]}")" ; pwd -P)"
+[ ${BASH_VERSION} ] && __DIR="$(cd "$(dirname "${BASH_SOURCES[0]}")" ; pwd -P)"
+[ ${ZSH_VERSION} ] && __DIR=$(pwd)
 
 setup_git_config() {
   git config --global user.name "Joe Nudell"
@@ -130,14 +131,24 @@ setup_tmux_config() {
 
   ln -s "$__DIR/lib/.tmux.conf" $TMUX_CONF
 }
+
+setup_omz() {
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+}
+  
   
 
 echo "Setting git config ..."
 setup_git_config
 echo "Setting up git aliases ..."
 setup_git_aliases
-echo "Setting up bash_profile ..."
-setup_bash_prof
+if [ -n "${BASH_VERSION}" ]; then
+  echo "Setting up bash_profile ..."
+  setup_bash_prof
+elif [ -n "${ZSH_VERSION}" ]; then
+  echo "Setting up zsh config ..."
+  setup_omz
+fi
 echo "Setting up vimrc ..."
 setup_vim_rc
 echo "Setting up tmux ..."
