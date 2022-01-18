@@ -19,6 +19,22 @@ setup_flake8() {
     python3 -m pip install --user flake8
 }
 
+setup_zsh_prof() {
+    ZSH_RC=~/.zshrc
+
+    if [ -f $ZSH_RC ]; then
+        echo "ZSH settings exist. Overwrite?"
+        select yn in "Yes" "No"; do
+          case $yn in 
+            Yes ) rm $ZSH_RC; break;;
+            No ) return;;
+          esac
+        done
+    fi
+
+    ln -s "$__DIR/lib/.zshrc" $ZSH_RC
+}
+
 setup_bash_prof() {
   BASH_PROF_EXT=~/.term.bash_profile
   BASH_PROF=~/.bash_profile
@@ -134,6 +150,7 @@ setup_tmux_config() {
 
 setup_omz() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  setup_zsh_prof
 }
   
   
