@@ -45,3 +45,6 @@ set backspace=indent,eol,start
 
 "Syntastic checkers
 let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+
+"Goimports
+let g:go_fmt_command = "goimports"
