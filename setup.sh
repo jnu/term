@@ -152,6 +152,10 @@ setup_omz() {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
   setup_zsh_prof
 }
+
+setup_vim_go() {
+  vim +GoInstallBinaries +qall
+}
   
   
 
@@ -173,6 +177,8 @@ setup_tmux_config
 echo "Adding plugins ..."
 init_submodules
 setup_vim_pathogen_plugins
+echo "Installing plugin bundles ..."
+setup_vim_go
 echo "Setting up ptpython config ..."
 setup_ptp_config
 echo "Setting up flake8"

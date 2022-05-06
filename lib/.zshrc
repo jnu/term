@@ -97,12 +97,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
 # OpenSSL
@@ -115,3 +109,9 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
