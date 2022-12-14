@@ -105,6 +105,8 @@ export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
 
+# GPG - cryptic errors happen if this is not set
+export GPG_TTY=$(tty)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -115,3 +117,9 @@ if [ -f '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/j
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Autopsy JRE
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# Local bin directory (used by Poetry, and possibly other programs).
+export PATH="$HOME/.local/bin:$PATH"
