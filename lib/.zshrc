@@ -112,14 +112,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Autopsy JRE
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# Local py bin directory (used by Poetry, and possibly other programs).
+export PY_USER_BASE=$(python3 -m site --user-base)
+export PATH="$HOME/.local/bin:$PY_USER_BASE/bin:$PATH"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jnu/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-# Autopsy JRE
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# Local bin directory (used by Poetry, and possibly other programs).
-export PATH="$HOME/.local/bin:$PATH"

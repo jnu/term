@@ -35,3 +35,6 @@
 [submodule "linked/vim-graphql"]
 	path = linked/vim-graphql
 	url = https://github.com/jparise/vim-graphql
+[submodule "linked/vim-svelte"]
+	path = linked/vim-svelte
+	url = https://github.com/evanleck/vim-svelte
