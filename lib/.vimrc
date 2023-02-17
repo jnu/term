@@ -26,6 +26,7 @@ autocmd BufEnter *.tsv set noexpandtab
 autocmd FileType r set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType typescript set tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType svelte set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType json set tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType html set tabstop=2 softtabstop=2 shiftwidth=2
 
@@ -48,3 +49,9 @@ let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
 
 "Goimports
 let g:go_fmt_command = "goimports"
+
+"Svelte customizations
+let g:svelte_indent_script = 1
+let g:svelte_indent_style = 1
+let g:svelte_preprocessors = ['typescript']
+let g:syntastic_svelte_checkers = ['javascript/eslint', 'html/htmlhint']
