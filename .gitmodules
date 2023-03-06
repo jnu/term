@@ -44,3 +44,6 @@
 [submodule "linked/html5.vim"]
 	path = linked/html5.vim
 	url = https://github.com/othree/html5.vim
+[submodule "linked/copilot.vim"]
+	path = linked/copilot.vim
+	url = https://github.com/github/copilot.vim.git

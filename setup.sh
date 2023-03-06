@@ -119,6 +119,7 @@ setup_vim_pathogen_plugins() {
   link_pathogen_plugin "html5.vim"
   link_pathogen_plugin "vim-javascript"
   link_pathogen_plugin "vim-svelte"
+  link_pathogen_plugin "copilot.vim"
 }
 
 setup_ptp_config() {
